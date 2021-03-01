@@ -66,15 +66,12 @@ const userSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
-    checkins: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Checkin',
-      },
-    ],
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
   }
 );
 
@@ -109,6 +106,13 @@ userSchema.pre('save', async function (next) {
     user.password = await bcrypt.hash(user.password, 8);
   }
   next();
+});
+
+userSchema.virtual('checkins', {
+  ref: 'Checkin',
+  localField: '_id',
+  foreignField: 'person',
+  justOne: false, // set true for one-to-one relationship
 });
 
 /**

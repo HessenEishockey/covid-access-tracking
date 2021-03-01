@@ -1,12 +1,12 @@
 {
-  "name": "create-nodejs-express-app",
-  "version": "1.6.0",
-  "description": "Create a Node.js app for building production-ready RESTful APIs using Express, by running one command",
+  "name": "covid-access-control",
+  "version": "0.1.0",
+  "description": "RESTful API backend for simple checkin and access tracking",
   "bin": "bin/createNodejsApp.js",
   "main": "src/index.js",
-  "repository": "https://github.com/hagopj13/node-express-boilerplate.git",
-  "author": "Hagop Jamkojian <hagopj13@gmail.com>",
-  "license": "MIT",
+  "repository": "https://github.com/HessenEishockey/covid-access-tracking",
+  "author": "Tim Ansink <tim.ansink@hey.com>",
+  "license": "Business Source License 1.1",
   "engines": {
     "node": ">=12.0.0"
   },
@@ -67,6 +67,7 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "pm2": "^4.1.2",
+    "qrcode": "^1.4.4",
     "swagger-jsdoc": "4.2.0",
     "swagger-ui-express": "4.1.4",
     "validator": "^13.0.0",

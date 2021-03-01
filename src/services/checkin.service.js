@@ -14,8 +14,8 @@ const createCheckin = async (checkinBody) => {
     throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
   }
   const checkinData = checkinBody;
-  checkinData.person = user.id;
-  const checkin = await Checkin.create(checkinData);
+  checkinData.person = user;
+  const checkin = await (await Checkin.create(checkinData)).populate('person', 'firstName lastName groups');
   return checkin;
 };
 

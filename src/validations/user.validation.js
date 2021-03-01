@@ -26,6 +26,12 @@ const getUser = {
   }),
 };
 
+const getQR = {
+  params: Joi.object().keys({
+    userId: Joi.string().custom(objectId),
+  }),
+};
+
 const updateUser = {
   params: Joi.object().keys({
     userId: Joi.required().custom(objectId),
@@ -49,6 +55,7 @@ module.exports = {
   createUser,
   getUsers,
   getUser,
+  getQR,
   updateUser,
   deleteUser,
 };
