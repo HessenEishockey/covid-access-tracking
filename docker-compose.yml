@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-  node-app:
+  covid-access-control:
     build: .
-    image: node-app
+    image: covid-access-control
     environment:
-      - MONGODB_URL=mongodb://mongodb:27017/node-boilerplate
+      - MONGODB_URL=mongodb://mongodb:27017/covid-access-control
     ports:
       - '3000:3000'
     depends_on:
